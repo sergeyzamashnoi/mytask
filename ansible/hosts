@@ -1,0 +1,2 @@
+[letsencrypt]
+172.16.231.128 ansible_user=root letsencrypt_email=sergeyzamashnoi@yahoo.com domain_name=example.com WHITE_LIST_IP_1=1.1.1.1 WHITE_LIST_IP_2=2.2.2.2 WHITE_LIST_IP_3=3.3.3.3 TIMEZONE=Europe/Moscow USERNAME=testuser FS_FILE_MAX=65535 NGINX_PROXY_PORT=8080 NGINX_PROXY_IP=2.2.2.2 

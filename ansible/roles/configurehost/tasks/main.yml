@@ -1,0 +1,26 @@
+---
+
+- name: Ensure group "users" exists
+  group:
+    name: users
+    state: present
+
+- name: Add the user "{{ USERNAME }}" with a specific uid and a primary group of 'users'
+  user:
+    name: "{{ USERNAME }}"
+    comment: "{{ USERNAME }}" 
+    uid: 1040
+    group: users
+
+- name: set timezone to "{{ TIMEZONE }}" 
+  timezone:
+    name: "{{ TIMEZONE }}"
+
+- name: Configure the limit of open file descriptors for all processes
+  lineinfile: dest=/etc/sysctl.conf insertafter="^bar" line="fs.file-max = '{{ FS_FILE_MAX }}' "
+
+- name: apply changes
+  shell: sysctl -p
+
+
+

@@ -1,0 +1,17 @@
+---
+
+
+- ufw:
+    rule: allow 
+    port: ssh
+    src: '{{ item }}'
+  with_items:
+    - "{{ WHITE_LIST_IP_1 }}"
+    - "{{ WHITE_LIST_IP_2 }}"
+    - "{{ WHITE_LIST_IP_3 }}"
+
+- ufw:
+    state: enabled
+    policy: allow
+
+
